@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8" />
+
+<title>Quintessential Responsive 3D CSS Cube Examples</title>
+
+<link href="css/lib/github.css" rel="stylesheet" type="text/css" />
+<link href="dist/qube.css" rel="stylesheet" type="text/css" />
+<link href="css/docs.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<header>
+
+<h1>Quintessential Responsive 3D CSS Cube Examples</h1>
+
+<p>Here are examples for the <a href="https://github.com/zachstronaut/quintessential-css-cube/">Quintessential 3D CSS Cube</a> GitHub project.  These examples <strong>require</strong> a parent element with a <code>perspective</code> CSS property definition, such as the one set by the <code>.qube-perspective</code> class.  The <code>.qube</code> class does the rest of the magic for you.  Enjoy! &mdash;<a href="https://twitter.com/zacharyjohnson">@zacharyjohnson</a></p>
+
+</header>
+
+
+<section class="content">
+
+<div class="example qube-perspective spin">
+	<ul class="qube cube01">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Translucent blue, 175x175x175px</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube cube01&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube01 { width: 175px; height: 175px; }
+.cube01 > * { background: rgba(0, 128, 255, 0.4); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube cube02">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+	
+	<div class="info">
+
+<p><a href="images/brick.png">Brick texture</a>, 120x120x120px</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube cube02&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube02 { width: 120px; height: 120px; }
+.cube02 > * { background: url(../images/brick.png); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<div class="sq-25 qube-preserve3d">
+		<ul class="qube cube03">
+			<li class="front"></li>
+			<li class="left"></li>
+			<li class="back"></li>
+			<li class="right"></li>
+			<li class="top"></li>
+			<li class="bottom"></li>
+		</ul>
+	</div>
+
+	<div class="info">
+
+<p>Solid green with responsive sizing, and also shows <code>.qube-preserve3d</code> helper class</p>
+
+<pre><code data-language="html">
+&lt;div class="sq-25 qube-preserve3d"&gt;
+  &lt;ul class=&quot;qube cube03&quot;&gt;
+    &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.sq-25 {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  margin: auto;
+  width: 25%;
+}
+
+/* Enforce 1:1 aspect ratio */
+.cube03 { width: 100%; padding-top: 100%; }
+.cube03 > * { background: #0c0; }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube no-shading cube04">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Brick texture with shading disabled by <code>.no-shading</code> class</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube no-shading cube04&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube04 { width: 120px; height: 120px; }
+.cube04 > * { background: url(../images/brick.png); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube cube05">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Customize individual faces</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube cube05&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube05 { width: 120px; height: 120px; }
+.cube05 > * { background: #f0f; }
+
+.cube05 > .front { background: #ff0; }
+.cube05 > .right { background: url(../images/brick.png); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube cube06">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Customize shading</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube cube06&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube06 { width: 120px; height: 120px; }
+.cube06 > * { background: url(../images/brick.png); }
+
+.cube06 > .front:after { background: rgba(0,0,255,0.1); }
+.cube06 > .back:after { background: rgba(0,0,255,0.6); }
+.cube06 > .left:after { background: rgba(0,0,255,0.5); }
+.cube06 > .right:after { background: rgba(0,0,255,0.3); }
+.cube06 > .top:after { background: rgba(0,0,255,0.2); }
+.cube06 > .bottom:after { background: rgba(0,0,255,0.7); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube textured cube07">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Texture wrap cube with <a href="images/texture.png">one image</a> using <code>.textured</code> class</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube textured cube07&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube07 { width: 150px; height: 150px; }
+.cube07 > * { background: url(../images/texture.png); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube no-shading cube08">
+		<li class="top">5</li>
+		<li class="bottom">6</li>
+		<li class="front">1</li>
+		<li class="left">2</li>
+		<li class="back">3</li>
+		<li class="right">4</li>
+	</ul>
+
+	<div class="info">
+
+<p>Transparent with HTML content</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube no-shading cube08&quot;&gt;
+  <!-- Source order does not matter when
+  using these face classes. -->
+  &lt;li class=&quot;top&quot;&gt;5&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;6&lt;/li&gt;
+  &lt;li class=&quot;front&quot;&gt;1&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;2&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;3&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;4&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube08 { width: 150px; height: 150px; }
+.cube08 > * { color: #000; background: transparent; }
+/* Some CSS for HTML text not shown */
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube textured cube09">
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Remove individual faces</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube textured cube09&quot;&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube09 { width: 150px; height: 150px; }
+.cube09 > * { background: url(../images/texture.png); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube faces no-shading cube10">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+
+	<div class="info">
+
+<p>Automatic faces with <code>.faces</code> helper class</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube faces no-shading cube10&quot;&gt;
+  <!-- Source order implies the faces here! -->
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;4&lt;/li&gt;
+  &lt;li&gt;5&lt;/li&gt;
+  &lt;li&gt;6&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube10 { width: 150px; height: 150px; }
+.cube10 > * { color: #000; background: transparent; }
+/* Some CSS for HTML text not shown */
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube textured solid cube11">
+		<li class="front"></li>
+		<li class="left"></li>
+		<li class="back"></li>
+		<li class="right"></li>
+		<li class="top"></li>
+		<li class="bottom"></li>
+	</ul>
+
+	<div class="info">
+
+<p>Optimize opaque cubes with <code>.solid</code> class</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube textured solid cube11&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube11 { width: 150px; height: 150px; }
+.cube11 > * { background: url(../images/texture.png); }
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective spin">
+	<ul class="qube no-shading solid cube12">
+		<li class="front">1</li>
+		<li class="left">2</li>
+		<li class="back">3</li>
+		<li class="right">4</li>
+		<li class="top">5</li>
+		<li class="bottom">6</li>
+	</ul>
+
+	<div class="info">
+
+<p>Transparency with <code>.solid</code> class</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube no-shading solid cube12&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;1&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;2&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;3&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;4&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;5&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;6&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube12 { width: 150px; height: 150px; }
+.cube12 > * { color: #000; background: transparent; }
+/* Some CSS for HTML text not shown */
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective">
+	<ul class="qube cube13">
+		<li class="front">1</li>
+		<li class="left">2</li>
+		<li class="back">3</li>
+		<li class="right">4</li>
+		<li class="top">5</li>
+		<li class="bottom">6</li>
+	</ul>
+
+	<div class="info">
+
+<p>Interactivity: Hover cube to spin around Y-axis</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube cube13&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;1&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;2&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;3&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;4&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;5&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;6&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube13 {
+  width: 150px; height: 150px;
+  transition: transform 1500ms ease;
+}
+
+.cube13:hover { transform: rotateY(359deg); }
+
+.cube13 > * { color: #000; background: #ddc; }
+/* Some CSS for HTML text not shown */
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+
+<div class="example qube-perspective">
+	<ul class="qube x-axis cube14">
+		<li class="front">1</li>
+		<li class="bottom">2</li>
+		<li class="back">3</li>
+		<li class="top">4</li>
+		<li class="left">5</li>
+		<li class="right">6</li>
+	</ul>
+
+	<div class="info">
+
+<p>When spinning around the X-axis, use the <code>.x-axis</code> helper class to avoid upside down content</p>
+
+<pre><code data-language="html">
+&lt;ul class=&quot;qube x-axis cube14&quot;&gt;
+  &lt;li class=&quot;front&quot;&gt;1&lt;/li&gt;
+  &lt;li class=&quot;bottom&quot;&gt;2&lt;/li&gt;
+  &lt;li class=&quot;back&quot;&gt;3&lt;/li&gt;
+  &lt;li class=&quot;top&quot;&gt;4&lt;/li&gt;
+  &lt;li class=&quot;left&quot;&gt;5&lt;/li&gt;
+  &lt;li class=&quot;right&quot;&gt;6&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<pre><code data-language="css">
+.cube14 {
+  width: 150px; height: 150px;
+  transition: transform 1500ms ease;
+}
+
+.cube14:hover { transform: rotateX(359deg); }
+
+.cube14 > * { color: #000; background: #ddc; }
+/* Some CSS for HTML text not shown */
+</code></pre>
+
+	</div>
+</div><!-- .example -->
+
+</section>
+
+
+<footer>
+	<a class="badgestronaut" href="http://www.zachstronaut.com/">This CSS library was created by zachstronaut.</a>
+
+	<a class="forkme" href="https://github.com/zachstronaut/quintessential-css-cube/">Fork me on GitHub</a>
+</footer>
+
+
+<script src="js/lib/rainbow.min.js"></script>
+
+</body>
+</html>
