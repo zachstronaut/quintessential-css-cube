@@ -1,0 +1,218 @@
+/*!
+/**
+ * Quintessential Responsive 3D CSS Cube
+ * https://github.com/zachstronaut/quintessential-css-cube/
+ * 2015-03-04 Release
+ * MIT License
+ *
+ * Zachary Johnson, @zacharyjohnson
+ * Zachstronaut LLC, http://www.zachstronaut.com
+ *
+ */
+
+/*
+
+
+Features:
+=========
+	-Specify the size of your cube in a single CSS rule
+	-Specify the color/texture of your cube with a single CSS rule
+	-Automatic flat shading (make the cube whatever color or texture or DOM content you want, it'll be given basic shading for you via :after pseudo element)
+	-Flexible tags for cube faces (your cube can be div tags or a ul list or whatever)	
+	-Excellent responsive design support
+
+
+Example Usage:
+A red 200 x 200 x 200px cube
+============================
+
+<style>
+
+#cube1 { width: 200px; height: 200px; }
+
+	#cube1 > * { background: #f00; }
+
+</style>
+
+<ul id="cube1" class="qube">
+	<li class="front"></li>
+	<li class="left"></li>
+	<li class="back"></li>
+	<li class="right"></li>
+	<li class="top"></li>
+	<li class="bottom"></li>
+</ul>
+
+*/
+
+
+.qube-perspective {
+	-webkit-perspective: 900px;
+	-moz-perspective: 900px;
+	perspective: 900px;
+}
+
+.qube-preserve3d {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.qube {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+	.qube > * {
+		background: #666;
+		background-size: 100%;
+	}
+
+	.qube > *,
+	.qube > *:after {
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.qube > *:after {
+		pointer-events: none; /* Prevent shadows from interfering with DOM mouse/touch events */
+		display: block;
+		content: "";
+	}
+	
+		.qube.no-shading > *:after {
+			display: none;
+		}
+
+		/* If your cube is not semi-transparent and you are not displaying the inside of your cube, make it .solid to optimize rendering. Using this class is optional. */
+		.qube.solid > *,
+		.qube.solid > *:after {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+
+		.qube.textured > * {
+			background-size: 300%;
+		}
+
+	.qube > .front,
+	.qube.faces > *:nth-child(1) {
+		/* This is the real breakthrough: We can't just translateZ(-100%) because Z has no dimension value for calculating a percentage, however we can be sneaky and rotate such that we can translate on an axis that *does* have real dimensions, and then we can rotate back! */
+		-webkit-transform: rotateX(90deg) translateY(50%) rotateX(-90deg);
+		-moz-transform: rotateX(90deg) translateY(50%) rotateX(-90deg);
+		transform: rotateX(90deg) translateY(50%) rotateX(-90deg);
+	}
+
+		.qube > .front:after,
+		.qube.faces > *:nth-child(1):after {
+		}
+
+		.qube.textured > .front,
+		.qube.textured.faces > *:nth-child(1) {
+			background-position: 0 0;
+		}
+
+	.qube > .back,
+	.qube.faces > *:nth-child(3) {
+		-webkit-transform: rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
+		-moz-transform: rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
+		transform: rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
+	}
+
+		.qube > .back:after,
+		.qube.faces > *:nth-child(3):after {
+			background: rgba(0, 0, 0, 0.6);
+		}
+
+		.qube.x-axis > .back,
+		.qube.x-axis.faces > *:nth-child(3) {
+			-webkit-transform: rotateX(90deg) translateY(-50%) rotateX(90deg);
+			-moz-transform: rotateX(90deg) translateY(-50%) rotateX(90deg);
+			transform: rotateX(90deg) translateY(-50%) rotateX(90deg);
+		}
+
+		.qube.textured > .back,
+		.qube.textured.faces > *:nth-child(3) {
+			background-position: -100% 0;
+		}
+
+	.qube > .left,
+	.qube.faces > *:nth-child(2) {
+		-webkit-transform: translateX(-50%) rotateY(-90deg);
+		-moz-transform: translateX(-50%) rotateY(-90deg);
+		transform: translateX(-50%) rotateY(-90deg);
+	}
+
+		.qube > .left:after,
+		.qube.faces > *:nth-child(2):after {
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		.qube.textured > .left,
+		.qube.textured.faces > *:nth-child(2) {
+			background-position: -200% 0;
+		}
+
+	.qube > .right,
+	.qube.faces > *:nth-child(4) {
+		-webkit-transform: translateX(50%) rotateY(90deg);
+		-moz-transform: translateX(50%) rotateY(90deg);
+		transform: translateX(50%) rotateY(90deg);
+	}
+
+		.qube > .right:after,
+		.qube.faces > *:nth-child(4):after {
+			background: rgba(0, 0, 0, 0.3);
+		}
+
+		.qube.textured > .right,
+		.qube.textured.faces > *:nth-child(4) {
+			background-position: 0 -100%;
+		}
+
+	.qube > .top,
+	.qube.faces > *:nth-child(5) {
+		-webkit-transform: translateY(-50%) rotateX(90deg);
+		-moz-transform: translateY(-50%) rotateX(90deg);
+		transform: translateY(-50%) rotateX(90deg);
+	}
+
+		.qube > .top:after,
+		.qube.faces > *:nth-child(5):after {
+			background: rgba(0, 0, 0, 0.2);
+		}
+
+		.qube.textured > .top,
+		.qube.textured.faces > *:nth-child(5) {
+			background-position: -100% -100%;
+		}
+
+	.qube > .bottom,
+	.qube.faces > *:nth-child(6) {
+		-webkit-transform: translateY(50%) rotateX(-90deg);
+		-moz-transform: translateY(50%) rotateX(-90deg);
+		transform: translateY(50%) rotateX(-90deg);
+	}
+
+		.qube > .bottom:after,
+		.qube.faces > *:nth-child(6):after {
+			background: rgba(0, 0, 0, 0.7);
+		}
+
+		.qube.textured > .bottom,
+		.qube.textured.faces > *:nth-child(6) {
+			background-position: -200% -100%;
+		}
