@@ -44,6 +44,8 @@ Hello web friend! The styles defined in `"src/qube.css"` provide you with an ide
 
 3.  **Automatic flat shading!** &mdash; Your cubes will automatically get basic shading, regardless of the color, image texture, or HTML content you define for the cube faces. _(This can be easily customized or disabled entirely with: `.qube.no-shading`)_
 
+  ![Rotating Shaded Cube](http://zachstronaut.github.io/quintessential-css-cube/images/brick-shaded.gif)
+
 4.  **Create responsively resizing cubes!** &mdash; Really easy with the surprisingly well supported CSS [viewport units](http://caniuse.com/#search=viewport%20unit).
 
   ```css
