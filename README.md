@@ -4,7 +4,7 @@
 
 _Created by [@zacharyjohnson](http://twitter.com/zacharyjohnson) &mdash; [zachstronaut.com](http://www.zachstronaut.com/)_
 
-Hello web friend! The styles defined in `"src/qube.css"` provide you with an ideal way to create 3D CSS3 cubes that are exceptionally easy to work and extensible.
+Hello web friend! The styles defined in `"src/qube.css"` provide you with an ideal way to create 3D CSS3 cubes that are exceptionally easy to work with and very extensible.
 
 ### Examples / Demo
 
