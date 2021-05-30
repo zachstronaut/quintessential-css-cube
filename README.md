@@ -8,7 +8,7 @@ Hello web friend! The styles defined in `"src/qube.css"` provide you with an ide
 
 ### Examples / Demo
 
-[View the Examples / Demo](https://zachstronaut.github.com/quintessential-css-cube/)
+[View the Examples / Demo](https://zachstronaut.github.io/quintessential-css-cube/)
 
 ### Features
 
